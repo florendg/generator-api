@@ -4,6 +4,6 @@ package dev.vultureweb.generator;
 import jakarta.ws.rs.ApplicationPath;
 import jakarta.ws.rs.core.Application;
 
-@ApplicationPath("/demo")
+@ApplicationPath("/")
 public class App extends Application {
 }
