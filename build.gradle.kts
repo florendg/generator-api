@@ -7,12 +7,13 @@ repositories {
 }
 
 java {
-    version = JavaVersion.VERSION_17
+    version = JavaVersion.VERSION_19
 }
 
 dependencies {
-    implementation("jakarta.platform:jakarta.jakartaee-api:9.1.0")
-    testImplementation("org.junit.jupiter:junit-jupiter:5.8.2")
+    implementation("jakarta.platform:jakarta.jakartaee-api:10.0.0")
+    implementation("org.postgresql:postgresql:42.2.27")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.9.0")
 }
 
 tasks {
@@ -23,6 +24,6 @@ tasks {
 
 tasks.create<Copy>("deploy") {
     dependsOn("build")
-    from("$buildDir/libs/listGenerator-17.war")
-    into("/usr/local/opt/wildfly-26-ee9/standalone/deployments/")
+    from("$buildDir/libs/listGenerator-19.war")
+    into("/usr/local/opt/wildfly-as/standalone/deployments/")
 }
