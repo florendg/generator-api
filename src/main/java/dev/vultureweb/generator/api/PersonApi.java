@@ -1,5 +1,6 @@
 package dev.vultureweb.generator.api;
 
+import dev.vultureweb.generator.LoggingInterceptor;
 import dev.vultureweb.generator.domain.Person;
 import dev.vultureweb.generator.impl.PersonTableManager;
 import jakarta.inject.Inject;
@@ -10,6 +11,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Path("/person")
+@LoggingInterceptor
 public class PersonApi {
 
     @Inject
